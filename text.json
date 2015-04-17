@@ -1,0 +1,1090 @@
+{
+    "0": {
+        "bookTitle": "Harry Potter and the Sorcerer's Stone (Harry Potter, #1)", 
+        "bookRatingCount": "3145054", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1997"
+        }, 
+        "genre": "Adventure, Family, Fantasy", 
+        "movieTitle": "Harry Potter and the Sorcerer's Stone", 
+        "author": "J.K. Rowling", 
+        "bookRating": "4.39", 
+        "tomatoAudienceRating": "3.7", 
+        "boxOffice": "$317.6M", 
+        "tomatoAudienceMeter": "82", 
+        "movieReleaseDate": "2001", 
+        "imdbRating": "7.5"
+    }, 
+    "1": {
+        "bookTitle": "Harry Potter and the Chamber of Secrets (Harry Potter, #2)", 
+        "bookRatingCount": "1347949", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1998"
+        }, 
+        "genre": "Adventure, Family, Fantasy", 
+        "movieTitle": "Harry Potter and the Chamber of Secrets", 
+        "author": "J.K. Rowling", 
+        "bookRating": "4.30", 
+        "tomatoAudienceRating": "3.7", 
+        "boxOffice": "$261.8M", 
+        "tomatoAudienceMeter": "79", 
+        "movieReleaseDate": "2002", 
+        "imdbRating": "7.3"
+    }, 
+    "2": {
+        "bookTitle": "Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)", 
+        "bookRatingCount": "1410990", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1999"
+        }, 
+        "genre": "Adventure, Family, Fantasy", 
+        "movieTitle": "Harry Potter and the Prisoner of Azkaban", 
+        "author": "J.K. Rowling", 
+        "bookRating": "4.48", 
+        "tomatoAudienceRating": "3.8", 
+        "boxOffice": "$249.4M", 
+        "tomatoAudienceMeter": "86", 
+        "movieReleaseDate": "2004", 
+        "imdbRating": "7.8"
+    }, 
+    "3": {
+        "bookTitle": "Harry Potter and the Goblet of Fire (Harry Potter, #4)", 
+        "bookRatingCount": "1358130", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2000"
+        }, 
+        "genre": "Adventure, Family, Fantasy", 
+        "movieTitle": "Harry Potter and the Goblet of Fire", 
+        "author": "J.K. Rowling", 
+        "bookRating": "4.48", 
+        "tomatoAudienceRating": "3.4", 
+        "boxOffice": "$290.0M", 
+        "tomatoAudienceMeter": "74", 
+        "movieReleaseDate": "2005", 
+        "imdbRating": "7.6"
+    }, 
+    "4": {
+        "bookTitle": "Harry Potter and the Order of the Phoenix (Harry Potter, #5)", 
+        "bookRatingCount": "1386431", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2003"
+        }, 
+        "genre": "Adventure, Family, Fantasy", 
+        "movieTitle": "Harry Potter and the Order of the Phoenix", 
+        "author": "J.K. Rowling", 
+        "bookRating": "4.42", 
+        "tomatoAudienceRating": "3.9", 
+        "boxOffice": "$292.0M", 
+        "tomatoAudienceMeter": "81", 
+        "movieReleaseDate": "2007", 
+        "imdbRating": "7.4"
+    }, 
+    "5": {
+        "bookTitle": "Harry Potter and the Half-Blood Prince (Harry Potter, #6)", 
+        "bookRatingCount": "1300950", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2005"
+        }, 
+        "genre": "Adventure, Family, Fantasy", 
+        "movieTitle": "Harry Potter and the Half-Blood Prince", 
+        "author": "J.K. Rowling", 
+        "bookRating": "4.49", 
+        "tomatoAudienceRating": "3.8", 
+        "boxOffice": "$301.9M", 
+        "tomatoAudienceMeter": "77", 
+        "movieReleaseDate": "2009", 
+        "imdbRating": "7.5"
+    }, 
+    "6": {
+        "bookTitle": "Harry Potter and the Deathly Hallows (Harry Potter, #7)", 
+        "bookRatingCount": "1355409", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2007"
+        }, 
+        "genre": "Adventure, Fantasy, Mystery", 
+        "movieTitle": "Harry Potter and the Deathly Hallows: Part 2", 
+        "author": "J.K. Rowling", 
+        "bookRating": "4.58", 
+        "tomatoAudienceRating": "4.3", 
+        "boxOffice": "$381.0M", 
+        "tomatoAudienceMeter": "89", 
+        "movieReleaseDate": "2011", 
+        "imdbRating": "8.1"
+    }, 
+    "7": {
+        "bookTitle": "The Fellowship of the Ring (The Lord of the Rings, #1)", 
+        "bookRatingCount": "1303508", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1954"
+        }, 
+        "genre": "Adventure, Fantasy", 
+        "movieTitle": "The Lord of the Rings: The Fellowship of the Ring", 
+        "author": "J.R.R. Tolkien", 
+        "bookRating": "4.30", 
+        "tomatoAudienceRating": "4.1", 
+        "boxOffice": "$313.8M", 
+        "tomatoAudienceMeter": "95", 
+        "movieReleaseDate": "2001", 
+        "imdbRating": "8.8"
+    }, 
+    "8": {
+        "bookTitle": "The Two Towers (The Lord of the Rings, #2)", 
+        "bookRatingCount": "392699", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1954"
+        }, 
+        "genre": "Action, Adventure, Fantasy", 
+        "movieTitle": "The Lord of the Rings: The Two Towers", 
+        "author": "J.R.R. Tolkien", 
+        "bookRating": "4.39", 
+        "tomatoAudienceRating": "4.1", 
+        "boxOffice": "$340.5M", 
+        "tomatoAudienceMeter": "95", 
+        "movieReleaseDate": "2002", 
+        "imdbRating": "8.8"
+    }, 
+    "9": {
+        "bookTitle": "The Return of the King (The Lord of the Rings, #3)", 
+        "bookRatingCount": "385641", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1954"
+        }, 
+        "genre": "Adventure, Fantasy", 
+        "movieTitle": "The Lord of the Rings: The Return of the King", 
+        "author": "J.R.R. Tolkien", 
+        "bookRating": "4.49", 
+        "tomatoAudienceRating": "3.7", 
+        "boxOffice": "$377.0M", 
+        "tomatoAudienceMeter": "86", 
+        "movieReleaseDate": "2003", 
+        "imdbRating": "8.9"
+    }, 
+    "10": {
+        "bookTitle": "The Great Gatsby", 
+        "bookRatingCount": "2005858", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1925"
+        }, 
+        "genre": "Drama, Romance", 
+        "movieTitle": "The Great Gatsby", 
+        "author": "F. Scott Fitzgerald", 
+        "bookRating": "3.85", 
+        "tomatoAudienceRating": "3.7", 
+        "boxOffice": "$144.8M", 
+        "tomatoAudienceMeter": "68", 
+        "movieReleaseDate": "2013", 
+        "imdbRating": "7.3"
+    }, 
+    "11": {
+        "bookTitle": "The Hunger Pains: A Parody", 
+        "bookRatingCount": "7232", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2012"
+        }, 
+        "genre": "Adventure, Sci-Fi", 
+        "movieTitle": "The Hunger Games", 
+        "author": "The Harvard Lampoon", 
+        "bookRating": "3.86", 
+        "tomatoAudienceRating": "4.1", 
+        "boxOffice": "$408.0M", 
+        "tomatoAudienceMeter": "81", 
+        "movieReleaseDate": "2012", 
+        "imdbRating": "7.3"
+    }, 
+    "12": {
+        "bookTitle": "SAMPLER ONLY: Catching Fire (The Hunger Games, #2)", 
+        "bookRatingCount": "1946", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2012"
+        }, 
+        "genre": "Adventure, Sci-Fi", 
+        "movieTitle": "The Hunger Games: Catching Fire", 
+        "author": "Suzanne Collins", 
+        "bookRating": "4.46", 
+        "tomatoAudienceRating": "4.3", 
+        "boxOffice": "$424.6M", 
+        "tomatoAudienceMeter": "90", 
+        "movieReleaseDate": "2013", 
+        "imdbRating": "7.7"
+    }, 
+    "13": {
+        "bookTitle": "Mockingjay: The Hunger Games - Book Three (A BookCaps Study Guide)", 
+        "bookRatingCount": "264", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2011"
+        }, 
+        "genre": "Adventure, Sci-Fi", 
+        "movieTitle": "The Hunger Games: Mockingjay - Part 1", 
+        "author": "BookCaps", 
+        "bookRating": "4.03", 
+        "tomatoAudienceRating": "3.8", 
+        "boxOffice": "$337.1M", 
+        "tomatoAudienceMeter": "74", 
+        "movieReleaseDate": "2014", 
+        "imdbRating": "6.9"
+    }, 
+    "14": {
+        "bookTitle": "Christmas at Twilight (Twilight, Texas, #6)", 
+        "bookRatingCount": "444", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2014"
+        }, 
+        "genre": "Drama, Fantasy, Romance", 
+        "movieTitle": "Twilight", 
+        "author": "Lori Wilde", 
+        "bookRating": "4.08", 
+        "tomatoAudienceRating": "3.9", 
+        "boxOffice": "$191.4M", 
+        "tomatoAudienceMeter": "72", 
+        "movieReleaseDate": "2008", 
+        "imdbRating": "5.2"
+    }, 
+    "15": {
+        "bookTitle": "New Moon (Twilight, #2)", 
+        "bookRatingCount": "1004523", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2006"
+        }, 
+        "genre": "Adventure, Drama, Fantasy", 
+        "movieTitle": "The Twilight Saga: New Moon", 
+        "author": "Stephenie Meyer", 
+        "bookRating": "3.53", 
+        "tomatoAudienceRating": "3.6", 
+        "boxOffice": "$296.6M", 
+        "tomatoAudienceMeter": "61", 
+        "movieReleaseDate": "2009", 
+        "imdbRating": "4.6"
+    }, 
+    "16": {
+        "bookTitle": "Eclipse (Twilight, #3)", 
+        "bookRatingCount": "988141", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2007"
+        }, 
+        "genre": "Adventure, Drama, Fantasy", 
+        "movieTitle": "The Twilight Saga: Eclipse", 
+        "author": "Stephenie Meyer", 
+        "bookRating": "3.71", 
+        "tomatoAudienceRating": "3.6", 
+        "boxOffice": "$300.5M", 
+        "tomatoAudienceMeter": "60", 
+        "movieReleaseDate": "2010", 
+        "imdbRating": "4.9"
+    }, 
+    "17": {
+        "bookTitle": "The Perks of Being a Wallflower", 
+        "bookRatingCount": "664966", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1999"
+        }, 
+        "genre": "Drama, Romance", 
+        "movieTitle": "The Perks of Being a Wallflower", 
+        "author": "Stephen Chbosky", 
+        "bookRating": "4.20", 
+        "tomatoAudienceRating": "4.2", 
+        "boxOffice": "$17.7M", 
+        "tomatoAudienceMeter": "89", 
+        "movieReleaseDate": "2012", 
+        "imdbRating": "8.1"
+    }, 
+    "18": {
+        "bookTitle": "Divergent (Divergent Series): By Veronica Roth -- Analysis", 
+        "bookRatingCount": "165", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2013"
+        }, 
+        "genre": "Adventure, Sci-Fi, Thriller", 
+        "movieTitle": "Divergent", 
+        "author": "BookBuddy", 
+        "bookRating": "4.35", 
+        "tomatoAudienceRating": "3.8", 
+        "boxOffice": "$150.8M", 
+        "tomatoAudienceMeter": "70", 
+        "movieReleaseDate": "2014", 
+        "imdbRating": "6.8"
+    }, 
+    "19": {
+        "bookTitle": "Pride and Prejudice", 
+        "bookRatingCount": "1541885", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1813"
+        }, 
+        "genre": "Romance, Drama", 
+        "movieTitle": "Pride and Prejudice", 
+        "author": "Jane Austen", 
+        "bookRating": "4.23", 
+        "tomatoAudienceRating": "0", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "N/A", 
+        "movieReleaseDate": "1995", 
+        "imdbRating": "9.2"
+    }, 
+    "20": {
+        "bookTitle": "City of Bones (The Mortal Instruments: Graphic Novel, Part 1)", 
+        "bookRatingCount": "2313", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2012"
+        }, 
+        "genre": "Action, Adventure, Fantasy", 
+        "movieTitle": "The Mortal Instruments: City of Bones", 
+        "author": "Cassandra Clare", 
+        "bookRating": "4.36", 
+        "tomatoAudienceRating": "3.5", 
+        "boxOffice": "$31.2M", 
+        "tomatoAudienceMeter": "59", 
+        "movieReleaseDate": "2013", 
+        "imdbRating": "6.0"
+    }, 
+    "21": {
+        "bookTitle": "The Fault in Our Stars: by John Green -- Sidekick", 
+        "bookRatingCount": "546", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2014"
+        }, 
+        "genre": "Drama, Romance", 
+        "movieTitle": "The Fault in Our Stars", 
+        "author": "BookBuddy", 
+        "bookRating": "4.16", 
+        "tomatoAudienceRating": "4.2", 
+        "boxOffice": "$124.9M", 
+        "tomatoAudienceMeter": "86", 
+        "movieReleaseDate": "2014", 
+        "imdbRating": "8.0"
+    }, 
+    "22": {
+        "bookTitle": "The Notebook (The Notebook, #1)", 
+        "bookRatingCount": "895476", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1996"
+        }, 
+        "genre": "Drama, Romance", 
+        "movieTitle": "The Notebook", 
+        "author": "Nicholas Sparks", 
+        "bookRating": "4.04", 
+        "tomatoAudienceRating": "3.5", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "80", 
+        "movieReleaseDate": "2004", 
+        "imdbRating": "7.9"
+    }, 
+    "23": {
+        "bookTitle": "Elisabeth: The Princess Bride, Austria - Hungary, 1853", 
+        "bookRatingCount": "2127", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2003"
+        }, 
+        "genre": "Adventure, Comedy, Family", 
+        "movieTitle": "The Princess Bride", 
+        "author": "Barry Denenberg", 
+        "bookRating": "3.64", 
+        "tomatoAudienceRating": "4", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "95", 
+        "movieReleaseDate": "1987", 
+        "imdbRating": "8.2"
+    }, 
+    "24": {
+        "bookTitle": "The Maze Runner (Maze Runner, #1)", 
+        "bookRatingCount": "393615", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2009"
+        }, 
+        "genre": "Action, Mystery, Sci-Fi", 
+        "movieTitle": "The Maze Runner", 
+        "author": "James Dashner", 
+        "bookRating": "4.02", 
+        "tomatoAudienceRating": "3.7", 
+        "boxOffice": "$102.4M", 
+        "tomatoAudienceMeter": "69", 
+        "movieReleaseDate": "2014", 
+        "imdbRating": "6.9"
+    }, 
+    "25": {
+        "bookTitle": "Angels and Demons / The Da Vinci Code (Robert Langdon, #1-2)", 
+        "bookRatingCount": "12813", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "@nil": "true"
+        }, 
+        "genre": "Mystery, Thriller", 
+        "movieTitle": "The Da Vinci Code", 
+        "author": "Dan Brown", 
+        "bookRating": "4.16", 
+        "tomatoAudienceRating": "3.2", 
+        "boxOffice": "$217.5M", 
+        "tomatoAudienceMeter": "57", 
+        "movieReleaseDate": "2006", 
+        "imdbRating": "6.5"
+    }, 
+    "26": {
+        "bookTitle": "The Lion, the Witch and the Wardrobe (Chronicles of Narnia, #1)", 
+        "bookRatingCount": "2179", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "@nil": "true"
+        }, 
+        "genre": "Adventure, Family, Fantasy", 
+        "movieTitle": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe", 
+        "author": "Hiawyn Oram", 
+        "bookRating": "3.98", 
+        "tomatoAudienceRating": "3.1", 
+        "boxOffice": "$291.7M", 
+        "tomatoAudienceMeter": "61", 
+        "movieReleaseDate": "2005", 
+        "imdbRating": "6.9"
+    }, 
+    "27": {
+        "bookTitle": "Memoirs of a Geisha", 
+        "bookRatingCount": "1129092", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1997"
+        }, 
+        "genre": "Drama, Romance", 
+        "movieTitle": "Memoirs of a Geisha", 
+        "author": "Arthur Golden", 
+        "bookRating": "4.04", 
+        "tomatoAudienceRating": "3.7", 
+        "boxOffice": "$57.0M", 
+        "tomatoAudienceMeter": "83", 
+        "movieReleaseDate": "2005", 
+        "imdbRating": "7.3"
+    }, 
+    "28": {
+        "bookTitle": "Gone Girl", 
+        "bookRatingCount": "946428", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2012"
+        }, 
+        "genre": "Drama, Mystery, Thriller", 
+        "movieTitle": "Gone Girl", 
+        "author": "Gillian Flynn", 
+        "bookRating": "3.97", 
+        "tomatoAudienceRating": "4.1", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "88", 
+        "movieReleaseDate": "2014", 
+        "imdbRating": "8.2"
+    }, 
+    "29": {
+        "bookTitle": "The Last Song", 
+        "bookRatingCount": "338362", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2008"
+        }, 
+        "genre": "Drama, Romance", 
+        "movieTitle": "The Last Song", 
+        "author": "Nicholas Sparks", 
+        "bookRating": "4.12", 
+        "tomatoAudienceRating": "3.5", 
+        "boxOffice": "$42.4M", 
+        "tomatoAudienceMeter": "65", 
+        "movieReleaseDate": "2010", 
+        "imdbRating": "5.7"
+    }, 
+    "30": {
+        "bookTitle": "A Walk to Remember", 
+        "bookRatingCount": "425972", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1999"
+        }, 
+        "genre": "Drama, Romance", 
+        "movieTitle": "A Walk to Remember", 
+        "author": "Nicholas Sparks", 
+        "bookRating": "4.13", 
+        "tomatoAudienceRating": "3.3", 
+        "boxOffice": "$41.1M", 
+        "tomatoAudienceMeter": "78", 
+        "movieReleaseDate": "2002", 
+        "imdbRating": "7.4"
+    }, 
+    "31": {
+        "bookTitle": "Ella Enchanted", 
+        "bookRatingCount": "274698", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1997"
+        }, 
+        "genre": "Comedy, Family, Fantasy", 
+        "movieTitle": "Ella Enchanted", 
+        "author": "Gail Carson Levine", 
+        "bookRating": "3.95", 
+        "tomatoAudienceRating": "3.1", 
+        "boxOffice": "$22.8M", 
+        "tomatoAudienceMeter": "57", 
+        "movieReleaseDate": "2004", 
+        "imdbRating": "6.3"
+    }, 
+    "32": {
+        "bookTitle": "Bridget Jones's Diary (Bridget Jones, #1)", 
+        "bookRatingCount": "585901", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1996"
+        }, 
+        "genre": "Comedy, Drama, Romance", 
+        "movieTitle": "Bridget Jones's Diary", 
+        "author": "Helen Fielding", 
+        "bookRating": "3.71", 
+        "tomatoAudienceRating": "3.3", 
+        "boxOffice": "$70.8M", 
+        "tomatoAudienceMeter": "81", 
+        "movieReleaseDate": "2001", 
+        "imdbRating": "6.7"
+    }, 
+    "33": {
+        "bookTitle": "My Sisters' Keeper", 
+        "bookRatingCount": "1704", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1970"
+        }, 
+        "genre": "Drama", 
+        "movieTitle": "My Sister's Keeper", 
+        "author": "L.P. Hartley", 
+        "bookRating": "4.00", 
+        "tomatoAudienceRating": "3.4", 
+        "boxOffice": "$49.1M", 
+        "tomatoAudienceMeter": "72", 
+        "movieReleaseDate": "2009", 
+        "imdbRating": "7.4"
+    }, 
+    "34": {
+        "bookTitle": "Modern Arabic: Structures, Functions, and Varieties", 
+        "bookRatingCount": "12", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2004"
+        }, 
+        "genre": "Adventure, Comedy, Drama", 
+        "movieTitle": "Holes", 
+        "author": "Clive Holes", 
+        "bookRating": "4.42", 
+        "tomatoAudienceRating": "3.3", 
+        "boxOffice": "$67.3M", 
+        "tomatoAudienceMeter": "76", 
+        "movieReleaseDate": "2003", 
+        "imdbRating": "7.1"
+    }, 
+    "35": {
+        "bookTitle": "The Sisterhood of the Traveling Pants (Sisterhood, #1)", 
+        "bookRatingCount": "419365", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2001"
+        }, 
+        "genre": "Comedy, Drama", 
+        "movieTitle": "The Sisterhood of the Traveling Pants", 
+        "author": "Ann Brashares", 
+        "bookRating": "3.72", 
+        "tomatoAudienceRating": "3.4", 
+        "boxOffice": "$43.5M", 
+        "tomatoAudienceMeter": "78", 
+        "movieReleaseDate": "2005", 
+        "imdbRating": "6.6"
+    }, 
+    "36": {
+        "bookTitle": "Eat, Pray, Love", 
+        "bookRatingCount": "937093", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2006"
+        }, 
+        "genre": "Drama, Romance", 
+        "movieTitle": "Eat Pray Love", 
+        "author": "Elizabeth Gilbert", 
+        "bookRating": "3.45", 
+        "tomatoAudienceRating": "3", 
+        "boxOffice": "$80.6M", 
+        "tomatoAudienceMeter": "42", 
+        "movieReleaseDate": "2010", 
+        "imdbRating": "5.6"
+    }, 
+    "37": {
+        "bookTitle": "The Giver (The Giver, #1)", 
+        "bookRatingCount": "1065285", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1993"
+        }, 
+        "genre": "Drama, Sci-Fi", 
+        "movieTitle": "The Giver", 
+        "author": "Lois Lowry", 
+        "bookRating": "4.11", 
+        "tomatoAudienceRating": "3.5", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "57", 
+        "movieReleaseDate": "2014", 
+        "imdbRating": "6.5"
+    }, 
+    "38": {
+        "bookTitle": "The Secret Life of Bees", 
+        "bookRatingCount": "776936", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2001"
+        }, 
+        "genre": "Drama", 
+        "movieTitle": "The Secret Life of Bees", 
+        "author": "Sue Monk Kidd", 
+        "bookRating": "3.97", 
+        "tomatoAudienceRating": "3.7", 
+        "boxOffice": "$37.7M", 
+        "tomatoAudienceMeter": "78", 
+        "movieReleaseDate": "2008", 
+        "imdbRating": "7.3"
+    }, 
+    "39": {
+        "bookTitle": "Gone with the Wind", 
+        "bookRatingCount": "701611", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1936"
+        }, 
+        "genre": "Drama, Romance, War", 
+        "movieTitle": "Gone with the Wind", 
+        "author": "Margaret Mitchell", 
+        "bookRating": "4.26", 
+        "tomatoAudienceRating": "3.9", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "93", 
+        "movieReleaseDate": "1939", 
+        "imdbRating": "8.2"
+    }, 
+    "40": {
+        "bookTitle": "Life of Pi", 
+        "bookRatingCount": "886397", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2001"
+        }, 
+        "genre": "Adventure, Drama", 
+        "movieTitle": "Life of Pi", 
+        "author": "Yann Martel", 
+        "bookRating": "3.86", 
+        "tomatoAudienceRating": "4.1", 
+        "boxOffice": "$125.0M", 
+        "tomatoAudienceMeter": "84", 
+        "movieReleaseDate": "2012", 
+        "imdbRating": "8.0"
+    }, 
+    "41": {
+        "bookTitle": "The Girl with the Dragon Tattoo (Millennium, #1)", 
+        "bookRatingCount": "1357580", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2005"
+        }, 
+        "genre": "Crime, Drama, Mystery", 
+        "movieTitle": "The Girl with the Dragon Tattoo", 
+        "author": "Stieg Larsson", 
+        "bookRating": "4.07", 
+        "tomatoAudienceRating": "4.1", 
+        "boxOffice": "$102.5M", 
+        "tomatoAudienceMeter": "86", 
+        "movieReleaseDate": "2011", 
+        "imdbRating": "7.9"
+    }, 
+    "42": {
+        "bookTitle": "Romeo and Juliet", 
+        "bookRatingCount": "1304197", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1594"
+        }, 
+        "genre": "Drama, Romance", 
+        "movieTitle": "Romeo and Juliet", 
+        "author": "William Shakespeare", 
+        "bookRating": "3.72", 
+        "tomatoAudienceRating": "3.3", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "74", 
+        "movieReleaseDate": "1968", 
+        "imdbRating": "7.7"
+    }, 
+    "43": {
+        "bookTitle": "Eragon (The Inheritance Cycle, #1)", 
+        "bookRatingCount": "814262", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2002"
+        }, 
+        "genre": "Action, Adventure, Family", 
+        "movieTitle": "Eragon", 
+        "author": "Christopher Paolini", 
+        "bookRating": "3.80", 
+        "tomatoAudienceRating": "3.5", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "N/A", 
+        "movieReleaseDate": "2006", 
+        "imdbRating": "5.1"
+    }, 
+    "44": {
+        "bookTitle": "Frankenstein", 
+        "bookRatingCount": "676916", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1818"
+        }, 
+        "genre": "Horror, Sci-Fi", 
+        "movieTitle": "Frankenstein", 
+        "author": "Mary Shelley", 
+        "bookRating": "3.71", 
+        "tomatoAudienceRating": "3.7", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "87", 
+        "movieReleaseDate": "1931", 
+        "imdbRating": "8.0"
+    }, 
+    "45": {
+        "bookTitle": "Matilda", 
+        "bookRatingCount": "335861", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1988"
+        }, 
+        "genre": "Comedy, Fantasy", 
+        "movieTitle": "Matilda", 
+        "author": "Roald Dahl", 
+        "bookRating": "4.26", 
+        "tomatoAudienceRating": "3.2", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "72", 
+        "movieReleaseDate": "1996", 
+        "imdbRating": "6.8"
+    }, 
+    "46": {
+        "bookTitle": "Charlie and the Chocolate Factory (Charlie Bucket, #1)", 
+        "bookRatingCount": "393762", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1964"
+        }, 
+        "genre": "Adventure, Comedy, Family", 
+        "movieTitle": "Charlie and the Chocolate Factory", 
+        "author": "Roald Dahl", 
+        "bookRating": "4.08", 
+        "tomatoAudienceRating": "3", 
+        "boxOffice": "$206.4M", 
+        "tomatoAudienceMeter": "51", 
+        "movieReleaseDate": "2005", 
+        "imdbRating": "6.7"
+    }, 
+    "47": {
+        "bookTitle": "Bridge to Terabithia", 
+        "bookRatingCount": "273883", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1977"
+        }, 
+        "genre": "Adventure, Drama, Family", 
+        "movieTitle": "Bridge to Terabithia", 
+        "author": "Katherine Paterson", 
+        "bookRating": "3.95", 
+        "tomatoAudienceRating": "3.4", 
+        "boxOffice": "$82.2M", 
+        "tomatoAudienceMeter": "70", 
+        "movieReleaseDate": "2007", 
+        "imdbRating": "7.2"
+    }, 
+    "48": {
+        "bookTitle": "The Bad Beginning (A Series of Unfortunate Events, #1)", 
+        "bookRatingCount": "211630", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1999"
+        }, 
+        "genre": "Adventure, Comedy, Family", 
+        "movieTitle": "Lemony Snicket's A Series of Unfortunate Events", 
+        "author": "Lemony Snicket", 
+        "bookRating": "3.83", 
+        "tomatoAudienceRating": "3.2", 
+        "boxOffice": "$118.5M", 
+        "tomatoAudienceMeter": "63", 
+        "movieReleaseDate": "2004", 
+        "imdbRating": "6.8"
+    }, 
+    "49": {
+        "bookTitle": "Les Mis\u00e9rables", 
+        "bookRatingCount": "452554", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1862"
+        }, 
+        "genre": "Drama, Musical, Romance", 
+        "movieTitle": "Les Mis\u00e9rables", 
+        "author": "Victor Hugo", 
+        "bookRating": "4.10", 
+        "tomatoAudienceRating": "4", 
+        "boxOffice": "$148.8M", 
+        "tomatoAudienceMeter": "79", 
+        "movieReleaseDate": "2012", 
+        "imdbRating": "7.7"
+    }, 
+    "50": {
+        "bookTitle": "Fifty Shades Trilogy: Fifty Shades of Grey / Fifty Shades Darker / Fifty Shades Freed", 
+        "bookRatingCount": "75287", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1990"
+        }, 
+        "genre": "Drama, Romance", 
+        "movieTitle": "Fifty Shades of Grey", 
+        "author": "E.L. James", 
+        "bookRating": "4.17", 
+        "tomatoAudienceRating": "N/A", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "N/A", 
+        "movieReleaseDate": "2015", 
+        "imdbRating": "4.2"
+    }, 
+    "51": {
+        "bookTitle": "Tuck Everlasting", 
+        "bookRatingCount": "143821", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1974"
+        }, 
+        "genre": "Drama, Romance, Family", 
+        "movieTitle": "Tuck Everlasting", 
+        "author": "Natalie Babbitt", 
+        "bookRating": "3.83", 
+        "tomatoAudienceRating": "3.3", 
+        "boxOffice": "$19.0M", 
+        "tomatoAudienceMeter": "70", 
+        "movieReleaseDate": "2002", 
+        "imdbRating": "6.7"
+    }, 
+    "52": {
+        "bookTitle": "The Color Purple", 
+        "bookRatingCount": "322082", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1982"
+        }, 
+        "genre": "Drama", 
+        "movieTitle": "The Color Purple", 
+        "author": "Alice Walker", 
+        "bookRating": "4.14", 
+        "tomatoAudienceRating": "3.9", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "94", 
+        "movieReleaseDate": "1985", 
+        "imdbRating": "7.8"
+    }, 
+    "53": {
+        "bookTitle": "Teacher Guide for \"The Boy in the Striped Pajamas\"", 
+        "bookRatingCount": "10", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "@nil": "true"
+        }, 
+        "genre": "Drama, War", 
+        "movieTitle": "The Boy in the Striped Pajamas", 
+        "author": "Novel Units, Inc.", 
+        "bookRating": "4.20", 
+        "tomatoAudienceRating": "3.9", 
+        "boxOffice": "$9.0M", 
+        "tomatoAudienceMeter": "85", 
+        "movieReleaseDate": "2008", 
+        "imdbRating": "7.8"
+    }, 
+    "54": {
+        "bookTitle": "Great Expectations", 
+        "bookRatingCount": "378933", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1861"
+        }, 
+        "genre": "Drama, Romance", 
+        "movieTitle": "Great Expectations", 
+        "author": "Charles Dickens", 
+        "bookRating": "3.71", 
+        "tomatoAudienceRating": "3.4", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "78", 
+        "movieReleaseDate": "1998", 
+        "imdbRating": "6.8"
+    }, 
+    "55": {
+        "bookTitle": "James and the Giant Peach", 
+        "bookRatingCount": "215885", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1961"
+        }, 
+        "genre": "Animation, Adventure, Family", 
+        "movieTitle": "James and the Giant Peach", 
+        "author": "Roald Dahl", 
+        "bookRating": "3.96", 
+        "tomatoAudienceRating": "3.1", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "65", 
+        "movieReleaseDate": "1996", 
+        "imdbRating": "6.7"
+    }, 
+    "56": {
+        "bookTitle": "Shutter Island", 
+        "bookRatingCount": "90432", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2003"
+        }, 
+        "genre": "Mystery, Thriller", 
+        "movieTitle": "Shutter Island", 
+        "author": "Dennis Lehane", 
+        "bookRating": "4.04", 
+        "tomatoAudienceRating": "3.3", 
+        "boxOffice": "$125.0M", 
+        "tomatoAudienceMeter": "76", 
+        "movieReleaseDate": "2010", 
+        "imdbRating": "8.1"
+    }, 
+    "57": {
+        "bookTitle": "The Princess Diaries (The Princess Diaries, #5-6)", 
+        "bookRatingCount": "521", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "@nil": "true"
+        }, 
+        "genre": "Comedy, Family, Romance", 
+        "movieTitle": "The Princess Diaries", 
+        "author": "Meg Cabot", 
+        "bookRating": "3.97", 
+        "tomatoAudienceRating": "3.2", 
+        "boxOffice": "$107.8M", 
+        "tomatoAudienceMeter": "68", 
+        "movieReleaseDate": "2001", 
+        "imdbRating": "6.2"
+    }, 
+    "58": {
+        "bookTitle": "The Silence of the Lambs", 
+        "bookRatingCount": "371", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2002"
+        }, 
+        "genre": "Drama, Thriller", 
+        "movieTitle": "The Silence of the Lambs", 
+        "author": "Yvonne Tasker", 
+        "bookRating": "4.22", 
+        "tomatoAudienceRating": "4.1", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "95", 
+        "movieReleaseDate": "1991", 
+        "imdbRating": "8.6"
+    }, 
+    "59": {
+        "bookTitle": "How the Grinch Stole Christmas!", 
+        "bookRatingCount": "193844", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1957"
+        }, 
+        "genre": "Animation, Short, Comedy", 
+        "movieTitle": "How the Grinch Stole Christmas!", 
+        "author": "Dr. Seuss", 
+        "bookRating": "4.34", 
+        "tomatoAudienceRating": "3.8", 
+        "boxOffice": "N/A", 
+        "tomatoAudienceMeter": "88", 
+        "movieReleaseDate": "1966", 
+        "imdbRating": "8.5"
+    }, 
+    "60": {
+        "bookTitle": "Diary of a Wimpy Kid (Diary of a Wimpy Kid, #1)", 
+        "bookRatingCount": "152999", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2004"
+        }, 
+        "genre": "Comedy, Family", 
+        "movieTitle": "Diary of a Wimpy Kid", 
+        "author": "Jeff Kinney", 
+        "bookRating": "3.95", 
+        "tomatoAudienceRating": "3.2", 
+        "boxOffice": "$64.0M", 
+        "tomatoAudienceMeter": "49", 
+        "movieReleaseDate": "2010", 
+        "imdbRating": "6.2"
+    }, 
+    "61": {
+        "bookTitle": "Forrest Gump (Forrest Gump, #1)", 
+        "bookRatingCount": "34842", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "1986"
+        }, 
+        "genre": "Drama, Romance", 
+        "movieTitle": "Forrest Gump", 
+        "author": "Winston Groom", 
+        "bookRating": "4.00", 
+        "tomatoAudienceRating": "4.1", 
+        "boxOffice": "$0.4M", 
+        "tomatoAudienceMeter": "95", 
+        "movieReleaseDate": "1994", 
+        "imdbRating": "8.8"
+    }, 
+    "62": {
+        "bookTitle": "The Lightning Thief (Percy Jackson and the Olympians, #1)", 
+        "bookRatingCount": "930654", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2005"
+        }, 
+        "genre": "Adventure, Family, Fantasy", 
+        "movieTitle": "Percy Jackson & the Olympians: The Lightning Thief", 
+        "author": "Rick Riordan", 
+        "bookRating": "4.19", 
+        "tomatoAudienceRating": "3.3", 
+        "boxOffice": "$86.7M", 
+        "tomatoAudienceMeter": "53", 
+        "movieReleaseDate": "2010", 
+        "imdbRating": "5.9"
+    }, 
+    "63": {
+        "bookTitle": "Angel (Angel, #1)", 
+        "bookRatingCount": "24087", 
+        "bookReleaseDate": {
+            "@type": "integer", 
+            "#text": "2010"
+        }, 
+        "genre": "Mystery, Thriller", 
+        "movieTitle": "Angels & Demons", 
+        "author": "L.A. Weatherly", 
+        "bookRating": "3.92", 
+        "tomatoAudienceRating": "3.4", 
+        "boxOffice": "$133.4M", 
+        "tomatoAudienceMeter": "57", 
+        "movieReleaseDate": "2009", 
+        "imdbRating": "6.7"
+    }
+}

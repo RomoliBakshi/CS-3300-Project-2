@@ -1,0 +1,148 @@
+<html>
+<head>
+<!-- Load Bootstrap, D3, and all other libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<style>
+	body{padding: 20px;}
+	svg { border: solid black 1px; }
+	.axis path { fill: none; stroke: black;}
+	.axis line { stroke: black; }
+	text { font-size: small; font-family: "Open Sans", Calibri; opacity: 0.3; text-anchor: middle; dominant-baseline: central; }
+	text:hover { fill: blue; opacity: 1.0; font-weight: bold; font-size: xx-large; }
+</style>
+</head>
+<body>
+	<h3>From the Page to the Screen</h3>
+	<div id="plot" style="padding:20px;"></div>
+	<script>
+		
+		var graphData;
+
+		d3.json("text.json", function (data) {
+			graphData = data;
+			var height = 500;
+			var width = 800;
+			var padding = 20;
+			var leftPadding = 300;
+ 
+			var svgContainer = d3.select("body").append("svg")
+		         .attr("width", width)
+		         .attr("height", height);
+		    var xScale = d3.scale.linear()
+		  		.domain([3.2, 4.8]).range([padding, width - leftPadding]);
+			var yScale = d3.scale.linear()
+		  		.domain([2.8, 4.5]).range([height - padding, padding]);
+
+		  	var xAxis = d3.svg.axis().scale(xScale)
+				svgContainer.append("g")
+				.attr("class", "axis")
+				.attr("transform", "translate(0,470)")
+				.call(xAxis);
+			var yAxis = d3.svg.axis().scale(yScale)
+				svgContainer.append("g")
+				.attr("class", "axis")
+				.attr("transform", "translate(30, 0), rotate(90)")
+				.call(yAxis);
+
+			// var circles = svgContainer.selectAll("circle")
+		 //       	.data(bookRatings)
+		 //      	.enter()
+		 //      	.append("circle")
+		 //        .attr("cx", 2)
+			// 	.attr("cy", 2)
+			// 	.attr("r", 10)
+			// 	.style("opacity", "0.5");
+
+			//Inputs circles for data. Use enter().append instead of for loop later on
+			for(i=0; i<50; i++){
+				svgContainer.append("circle")
+			        .attr("cx", xScale(graphData[i].bookRating))
+					.attr("cy", yScale(graphData[i].tomatoAudienceRating))
+					.attr("r", 10)
+					.style("opacity", "0.5")
+					.style("fill", function(){
+						//Temporary. Parse strings into arrays of different genres later on
+						if(graphData[i].genre.indexOf("Adventure") > -1){
+							return "red";
+						}
+						if(graphData[i].genre.indexOf("Fantasy") > -1){
+							return "blue";
+						}
+						if(graphData[i].genre.indexOf("Sci-Fi") > -1){
+							return "orange";
+						}
+						if(graphData[i].genre.indexOf("Drama") > -1){
+							return "green";
+						}
+						else{
+							return "black";
+						}
+					});
+			}
+			
+			//Creates legend circles and descriptions
+			svgContainer.append("circle")
+		        .attr("cx", 600)
+				.attr("cy", 250)
+				.attr("r", 10)
+				.style("opacity", "0.5")
+				.style("fill", "blue");
+			svgContainer.append("circle")
+		        .attr("cx", 600)
+				.attr("cy", 275)
+				.attr("r", 10)
+				.style("opacity", "0.5")
+				.style("fill", "red");
+			svgContainer.append("circle")
+		        .attr("cx", 600)
+				.attr("cy", 300)
+				.attr("r", 10)
+				.style("opacity", "0.5")
+				.style("fill", "green");
+			svgContainer.append("circle")
+		        .attr("cx", 600)
+				.attr("cy", 325)
+				.attr("r", 10)
+				.style("opacity", "0.5")
+				.style("fill", "orange");
+
+			
+			svgContainer.append("text")
+		        .attr("x", 650)
+				.attr("y", 275)
+				.attr("r", 10)
+				.text("Adventure");
+			svgContainer.append("text")
+		        .attr("x", 650)
+				.attr("y", 250)
+				.attr("r", 10)
+				.text("Fantasy");
+			svgContainer.append("text")
+		        .attr("x", 650)
+				.attr("y", 300)
+				.attr("r", 10)
+				.text("Drama");
+			svgContainer.append("text")
+		        .attr("x", 650)
+				.attr("y", 325)
+				.attr("r", 10)
+				.text("Sci-Fi");
+
+			// points = data.map(function (book) {
+			// 	return { 
+			// 		bookTitle: book.bookTitle, bookRating: book.bookRating
+			// 	};
+			// });
+
+			// points.enter().append("text")
+			// .attr("x", 2)
+			// .attr("y", 2)
+			// .text(function (w) { return w.bookTitle; } );
+		});
+	</script>
+</body>
+</html>
