@@ -27,6 +27,20 @@ h2 {
 	text-shadow: 1px 1px black;	
 }
 
+#content {
+	background-image: url("popback.jpeg");
+	text-align: center;
+}
+
+#svg {
+	opacity: .80;
+	margin: auto;
+	background: white;
+	height: 500;
+	width: 800;
+	margin-bottom: 5%;
+}
+
 #popcorn {
 	text-align: center;
 }
