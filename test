@@ -1,0 +1,112 @@
+// Appending Filters
+		var genresList = ["Adventure", "Romance", "Thriler", "Comedy", "Drama", "Family", "Fantasy", "Sci-Fi", "Action", "Mystery"];
+		var genresString = "<h4> Genres </h4>";
+		genresList.forEach(function(d, i) {
+			var checkbox = "<input type='checkbox' id='" + d + "' value='" + d + "' class='css-checkbox' checked='checked'></input>";
+			var label = "<label for='" + d + "' name='genre' class='css-label lite-cyan-check'> " + d + "</label><br/>"; 
+			genresString += checkbox + label;
+		});
+		d3.select("#filter").html(genresString);
+		d3.selectAll(".css-checkbox").on("change", function() { 
+				var selection = this.value;
+				editGraph(selection, this.checked);
+			} 
+		);
+
+		// Create SVG elements
+		var height = 500;
+		var width = 900;
+		var padding = 70;
+		var svg = d3.select("#svg").append("svg").attr("height", height).attr("width", width);
+
+		// xScale == tomatoRating (movie)
+		var xScale = d3.scale.linear().domain([4,9.5]).range([padding, width - padding]);
+		var xAxis = d3.svg.axis().scale(xScale);
+		svg.append("g")
+		  .attr("class", "axis")
+		  .attr("transform", "translate(0, " + (height - padding) + ")")
+		  .call(xAxis);
+		// yScale == bookRating (book)
+		var yScale = d3.scale.linear().domain([3.3,4.7]).range([height - padding, padding]);
+		var yAxis = d3.svg.axis().scale(yScale).orient("left");
+		svg.append("g")
+			.attr("class", "axis")
+			.attr("transform", "translate(" + padding + ", 0)")
+			.call(yAxis);
+		// Add labels
+		var xLabel = svg.append("text")
+			.attr("x", width / 2)
+			.attr("y", height - (padding / 3))
+			.style("text-anchor", "middle")
+			.text("IMDB Movie Ratings");
+		var yLabel = svg.append("text")
+			.attr("x", padding / 3)
+			.attr("y", height / 2)
+			.attr("transform", "rotate(270 " + padding / 3 + "," + height / 2 + ")")
+			.style("text-anchor", "middle")
+			.text("GoodReads Book Ratings");
+		var title = svg.append("text")
+			.attr("x", width / 2)
+			.attr("y", padding / 2)
+			.style("text-anchor", "middle")
+			.text("Movie Book Adaptions: Rating Comparisons");
+
+		// Clear Graph
+		function editGraph(selection, checked) {
+			var change = checked == true ? "visible" : "hidden";
+			var allCircles = svg.selectAll("#datapoints");
+			var data = svg.selectAll("#datapoints").data();
+				allCircles.forEach(function (d, i) {
+					
+					if (data[i].genre.indexOf(selection) != -1) {
+						d.attr("visibility", change);
+					}	
+				})
+		}
+
+		// Create Graph:
+		function createGraph() {
+			d3.json("./text.json", function(error, data) {
+				// Appending Data
+				var genresSelected = d3.selectAll("checkbox").property('checked', true);
+				var circles = svg.append("g");
+				circles.selectAll("#circles")
+					.data(data)
+					.enter()
+					.append("circle")
+					.attr("id", "datapoints") // may change this to be mainGenre
+					.attr("cx", function (d) {
+						return xScale(Number(d.imdbRating));
+					})
+					.attr("cy", function (d) {
+						return yScale(Number(d.bookRating));
+					})
+					.attr("r", 10)
+					.style("fill", function (d) {	
+						if (d.genre.indexOf("Adventure") != -1) {
+							return "#3A539B"; // blue
+						}
+						if (d.genre.indexOf("Romance") != -1) {
+							return "#D24D57"; // pink
+						}
+						if (d.genre.indexOf("Thriller") != -1) {
+							return "#6C7A89"; // grey-blue
+						}
+						if (d.genre.indexOf("Comedy") != -1) {
+							return "#F9BF3B"; // yellow
+						}
+						if (d.genre.indexOf("Drama") != -1) {
+							return "#913D88"; // purple
+						}			
+						else {
+							return "green"; // other
+						}
+					})
+					.style("opacity", 0.7)
+					.on("mouseover", function (d) {
+						d3.select("#info").html("<h4>" + d.bookTitle + "</h4>");
+					});
+			}); 
+		}
+
+		createGraph();
