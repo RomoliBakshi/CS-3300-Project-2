@@ -13,7 +13,7 @@ h1 {
 	padding-bottom: 2%;
 	font-family: 'Arvo', serif;
 	text-align: right;
-	padding-right: 2%;
+	padding-right: 3%;
 	font-size: 4.2em;
 	color: #fddf81;
 	text-shadow: 3px 3px #2a3252;
@@ -86,6 +86,9 @@ h4 {
 	float: right;
 	color: white;
   	overflow-y:auto;
+  	bottom: 1000% !important;
+/*  	position: absolute;
+  	top: 0;*/
 }
 
 #info_content {
@@ -248,11 +251,15 @@ input {
 }
 
 #groupstack {
-	margin: 0;
-	float: left;
-	width: 5%;
 	padding-left: 3%; 
-	text-align: left;
+	float: left;
+}
+
+#groupstack label {
+	font-size: 1em;
+	margin-bottom: 10%;
+	width: 45%;
+	display: inline-block;
 }
 
 footer {
