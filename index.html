@@ -136,7 +136,7 @@
 				    yGroupMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y; }); }),
 				    yStackMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); });
 
-				var margin = {top: 40, right: 250, bottom: 70, left: 50},
+				var margin = {top: 40, right: 250, bottom: 70, left: 150},
 				    width = 960 - margin.left - margin.right,
 				    height = 500 - margin.top - margin.bottom;
 
@@ -183,6 +183,10 @@
 				    })
 				    .orient("bottom");
 
+				var yAxis = d3.svg.axis()
+				    .scale(y)
+				    .tickPadding(6);
+
 				var svg = d3.select("#barGraph").append("svg")
 				    .attr("width", width + margin.left + margin.right)
 				    .attr("height", height + margin.top + margin.bottom)
@@ -214,6 +218,11 @@
 				    .attr("transform", "translate(0," + height + ")")
 				    .call(xAxis);
 
+				svg.append("g")
+				    .attr("class", "y axis")
+				    .attr("transform", "rotate(90)")
+				    .call(yAxis);
+
 				//Creates labels & legend
 				var xLabel = svg.append("text")
 					.attr("x", width / 2)
@@ -224,9 +233,10 @@
 				var yLabel = svg.append("text")
 					.attr("x", 0)
 					.attr("y", height/2)
-					.attr("transform", "rotate(270 " + margin.left/50 + "," + height / 2 + ")")
+					.attr("transform", "translate(-80, 0)")
 					.style("text-anchor", "middle")
-					.text("Relative Rating Value");
+					.text("Relative Rating Value")
+
 				var title = svg.append("text")
 					.attr("x", width / 2)
 					.attr("y", 0)
@@ -234,33 +244,33 @@
 					.text("IMDB Ratings vs. Rotten Tomatoes Ratings By Genre");
 
 				svg.append("circle")
-				    .attr("cx", 725)
+				    .attr("cx", 625)
 				    .attr("cy", 200)
 				    .attr("r", 8)
 				    .style("fill", "#3366FF")
 				    .style("opacity", 0.4);
 				svg.append("text")
-					.attr("x", 750)
+					.attr("x", 650)
 					.attr("y", 205)
 					.text("Overall IMDB Rating")
 				svg.append("circle")
-				    .attr("cx", 725)
+				    .attr("cx", 625)
 				    .attr("cy", 175)
 				    .attr("r", 8)
 				    .style("fill", "#1AB3FF")
 				    .style("opacity", 0.4);
 				svg.append("text")
-					.attr("x", 750)
+					.attr("x", 650)
 					.attr("y", 180)
 					.text("Rotten Tomatoes Viewer Ratings")
 				svg.append("circle")
-				    .attr("cx", 725)
+				    .attr("cx", 625)
 				    .attr("cy", 150)
 				    .attr("r", 8)
 				    .style("fill", "#00FFFF")
 				    .style("opacity", 0.4);
 				svg.append("text")
-					.attr("x", 750)
+					.attr("x", 650)
 					.attr("y", 155)
 					.text("Rotten Tomatoes Critic Ratings")
 
