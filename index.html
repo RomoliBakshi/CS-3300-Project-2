@@ -4,6 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700|Oswald:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="styles.css">
@@ -23,12 +24,6 @@
 		.axis line {stroke: #000000; }
 		.axis text { font-size: x-small; }
 		body { font-family: "Helvetica"; } 
-		body {
-		  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		  margin: auto;
-		  position: relative;
-		  width: 960px;
-		}
 		text {
 		  font: 10px sans-serif;
 		}
@@ -51,58 +46,115 @@
 	<div id="title">
 		<h2>Manuela Rios, Stephanie Cheuk, Romoli Bakshi</h2>
 		<h1>FROM <strong>PAGE</strong> TO SCREEN</h1>
-<<<<<<< Updated upstream
-</div>
+	</div>
 
 <div id="content">
-	<div id="svg">
+	<div id="centered">
+		<div id="filter">
+<!-- 			<input type="checkbox" id="cb_Adventure" value="Adventure" class='css-checkbox' checked='checked'></input>
+			<label for="cb_Adventure" name="genre" class="css-label lite-cyan-check"> Adventure </label> <br/>
+			<input type="checkbox" id="cb_Comedy" value="Comedy" class='css-checkbox' checked='checked'></input>
+			<label for="cb_Comedy" name="genre" class="css-label lite-cyan-check"> Comedy </label> <br/>			
+			<input type="checkbox" id="cb_Drama" value="Drama" class='css-checkbox' checked='checked'></input>
+			<label for="cb_Drama" name="genre" class="css-label lite-cyan-check"> Drama </label> <br/>			
+			<input type="checkbox" id="cb_Family" value="Family" class='css-checkbox' checked='checked'></input>
+			<label for="cb_Family" name="genre" class="css-label lite-cyan-check"> Family </label> <br/>			
+			<input type="checkbox" id="cb_Fantasy" value="Fantasy" class='css-checkbox' checked='checked'></input>
+			<label for="cb_Fantasy" name="genre" class="css-label lite-cyan-check"> Fantasy </label> <br/>			
+			<input type="checkbox" id="cb_Romance" value="Romance" class='css-checkbox' checked='checked'></input>
+			<label for="cb_Romance" name="genre" class="css-label lite-cyan-check"> Romance </label> <br/>			
+			<input type="checkbox" id="cb_Sci-Fi" value="Sci-Fi" class='css-checkbox' checked='checked'></input>
+			<label for="cb_Sci-Fi" name="genre" class="css-label lite-cyan-check"> Sci-Fi </label> <br/>			
+			<input type="checkbox" id="cb_Thriller" value="Thriller" class='css-checkbox' checked='checked'></input>
+			<label for="cb_Thriller" name="genre" class="css-label lite-cyan-check"> Thriller </label> <br/>	 -->	
+		</div>
+		<div id="svg"></div>
+		<div id="info"></div>
+	</div>		
 
 	<script>
+		var genresList = ["Adventure", "Comedy", "Drama", "Family", "Fantasy", "Romance", "Sci-Fi", "Thriller"];
+		var genresString = "<h4> Genres </h4>";
+		genresList.forEach(function(d, i) {
+			var checkbox = "<input type='checkbox' id='cb_" + d + "' value='" + d + "' class='css-checkbox' checked='checked'></input>";
+			var label = "<label for='cb_" + d + "' name='genre' class='css-label lite-cyan-check'> " + d + "</label><br/>"; 
+			genresString += checkbox + label;
+		});
+		var print = d3.select("#filter").html(genresString);
+
+		$(document).on("change", ".css-checkbox", function() {
+			var selection = this.value;
+			var checked = this.checked;
+			editGraph(selection, checked);
+		});
+
+		// Create SVG elements
+		var height = 500;
+		var width = 900;
+		var padding = 70;
+		var svg = d3.select("#svg").append("svg").attr("height", height).attr("width", width);
+
+		// xScale == tomatoRating (movie)
+		var xScale = d3.scale.linear().domain([4,9.5]).range([padding, width - padding]);
+		var xAxis = d3.svg.axis().scale(xScale);
+		svg.append("g")
+		  .attr("class", "axis")
+		  .attr("transform", "translate(0, " + (height - padding) + ")")
+		  .call(xAxis);
+		// yScale == bookRating (book)
+		var yScale = d3.scale.linear().domain([3.3,4.7]).range([height - padding, padding]);
+		var yAxis = d3.svg.axis().scale(yScale).orient("left");
+		svg.append("g")
+			.attr("class", "axis")
+			.attr("transform", "translate(" + padding + ", 0)")
+			.call(yAxis);
+		// Add labels
+		var xLabel = svg.append("text")
+			.attr("x", width / 2)
+			.attr("y", height - (padding / 3))
+			.style("text-anchor", "middle")
+			.text("IMDB Movie Ratings");
+		var yLabel = svg.append("text")
+			.attr("x", padding / 3)
+			.attr("y", height / 2)
+			.attr("transform", "rotate(270 " + padding / 3 + "," + height / 2 + ")")
+			.style("text-anchor", "middle")
+			.text("GoodReads Book Ratings");
+		var title = svg.append("text")
+			.attr("x", width / 2)
+			.attr("y", padding / 2)
+			.style("text-anchor", "middle")
+			.text("Movie Book Adaptions: Rating Comparisons");
+
+		// Clear Graph
+		function editGraph(selection, checked) {
+			var change = checked == true ? "visible" : "hidden";
+			var data = svg.selectAll("#" + selection);
+			var opacityLevel = checked == true ? ".7" : "0";
+
+			data.transition().duration(300).style("opacity", opacityLevel);
+
+			if (checked == true) {
+				data.attr("visibility", change);
+			}
+ 			else {
+ 				setTimeout(function(){ 
+ 					data.attr("visibility", change); 
+ 				}, 300);
+ 			}
+		}
+
 		d3.json("./text.json", function(error, data) {
-
-			var height = 500;
-			var width = 800;
-			var padding = 70;
-			var svg = d3.select("#svg").append("svg").attr("height", height).attr("width", width);
-
-			// xScale == tomatoRating (movie)
-			var xScale = d3.scale.linear().domain([3,10]).range([padding, width - padding]);
-			var xAxis = d3.svg.axis().scale(xScale);
-			svg.append("g")
-			  .attr("class", "axis")
-			  .attr("transform", "translate(0, " + (height - padding) + ")")
-			  .call(xAxis);
-			// yScale == bookRating (book)
-			var yScale = d3.scale.linear().domain([3,5]).range([height - padding, padding]);
-			var yAxis = d3.svg.axis().scale(yScale).orient("left");
-			svg.append("g")
-				.attr("class", "axis")
-				.attr("transform", "translate(" + padding + ", 0)")
-				.call(yAxis);
-			// Add labels
-			var xLabel = svg.append("text")
-				.attr("x", width / 2)
-				.attr("y", height - (padding / 3))
-				.style("text-anchor", "middle")
-				.text("IMDB Movie Ratings");
-			var yLabel = svg.append("text")
-				.attr("x", padding / 3)
-				.attr("y", height / 2)
-				.attr("transform", "rotate(270 " + padding / 3 + "," + height / 2 + ")")
-				.style("text-anchor", "middle")
-				.text("GoodReads Book Ratings");
-			var title = svg.append("text")
-				.attr("x", width / 2)
-				.attr("y", padding / 2)
-				.style("text-anchor", "middle")
-				.text("Movie Book Adaptions: Rating Comparisons");
-
 			// Appending Data
+			var genresSelected = d3.selectAll("checkbox").property('checked', true);
 			var circles = svg.append("g");
 			circles.selectAll("#circles")
 				.data(data)
 				.enter()
 				.append("circle")
+				.attr("id", function (d) {
+					return d.mainGenre;
+				}) // may change this to be mainGenre
 				.attr("cx", function (d) {
 					return xScale(Number(d.imdbRating));
 				})
@@ -111,32 +163,56 @@
 				})
 				.attr("r", 10)
 				.style("fill", function (d) {	
-					if (d.genre.indexOf("Adventure") != -1) {
+					if(d.mainGenre.indexOf("Adventure") != -1){
 						return "#3A539B"; // blue
-					}
-					if (d.genre.indexOf("Romance") != -1) {
-						return "#D24D57"; // pink
-					}
-					if (d.genre.indexOf("Thriller") != -1) {
-						return "#6C7A89"; // grey-blue
-					}
-					if (d.genre.indexOf("Comedy") != -1) {
-						return "#F9BF3B"; // yellow
-					}
-					if (d.genre.indexOf("Drama") != -1) {
+			  		}
+			  		if(d.mainGenre.indexOf("Comedy") != -1){
+			  			return "#87D37C"; // light green
+			  		}
+			  		if(d.mainGenre.indexOf("Drama") != -1){
+						return "#F9BF3B"; // orange
+				  	}
+			  		if(d.mainGenre.indexOf("Family") != -1){
+						return "green"; // green
+			  		}  
+			  		if(d.mainGenre.indexOf("Fantasy") != -1){
 						return "#913D88"; // purple
-					}			
-					else {
-						return "green"; // other
-					}
+			  		}  	
+			  		if(d.mainGenre.indexOf("Romance") != -1){
+						return "#D24D57"; // pink
+			  		} 	
+			  		if(d.mainGenre.indexOf("Sci-Fi") != -1){
+						return "#F9BF3B"; // yellow
+			  		} 
+			  		if(d.mainGenre.indexOf("Thriller") != -1){
+						return "#6C7A89"; // grey-blue
+			  		} 
 				})
-				.style("opacity", 0.7);	
-		}); 
+				.style("opacity", 0.7)
+				.on("mouseover", function (d) {
+					d3.select("#info").html("<h4>" + d.bookTitle + "</h4>");
+  					d3.select(this).attr("r", 15).attr("stroke", "#7e7e7e").attr("stroke-width", "1px");
+				})
+				.on("mouseout", function (d) {
+  					d3.select(this).attr("r", 10).attr("stroke", "none").attr("stroke-width", "0px");
+				})
+				.on("click", function (d) {
+					console.log("trigger!");
+					var string = "<h4> Book Title: " + d.bookTitle + "</h4>";
+					string += "Author: " + d.author + ", released in " + d.bookReleaseDate;
+					string += "<h4> Movie Title: " + d.movieTitle + "</h4>";
+					string += "main genre: " + d.mainGenre + "<br/>";
+					string += "genres: " + d.genre + "<br/>";
+					string += "rated: " + d.rated + "<br/>";
+					d3.select("#info").html(string);
+				});
+				
+			}); 
+	
 
 	</script>
-	</div>
 </div>
-=======
+
 	<div id="barGraph">
 	<br>
 		<form>

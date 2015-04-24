@@ -2,7 +2,6 @@
 	margin: 0;
 	padding: 0;
 	font-family: 'Arvo', serif;
-	
 }
 
 body {
@@ -29,24 +28,93 @@ h2 {
 }
 
 #content {
-	background-image: url("popback.jpeg");
+	/*background-image: url("popback.jpeg");*/
+	display: block;
+	width: 100%;
+	height: 550px;
+	background-color: white;
 	text-align: center;
 }
 
 #svg {
 	opacity: .80;
-	margin: auto;
+	float: left;
 	background: white;
 	height: 500;
-	width: 800;
+	width: 900;
 	margin-bottom: 5%;
+}
+
+#centered {
+	margin: auto;
+	width: 1200px;
+}
+
+#filter {
+	width: 150px;
+	padding-top: 30px;
+	float: left;
+	display: block;
+	text-align: left;
+}
+
+#info {
+	width: 150px;
+	display: block;
+	padding-top: 30px;
+	float: left;
+	text-align: center;
 }
 
 #popcorn {
 	text-align: center;
+	height: 60px;
 }
 
 #popimg {
     width: 40%;
     height: 60%;
 }
+
+/* Checkbox Styling */
+
+input[type=checkbox].css-checkbox {
+	z-index: 1;
+	position: absolute; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height:1px; 
+    width:1px; 
+    margin:-1px; 
+    padding:0;
+    border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+	padding-left:20px;
+	height:15px; 
+	display:inline-block;
+	line-height:15px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:15px;
+	vertical-align:middle;
+	cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+	background-position: 0 -15px;
+}
+
+.css-label{
+	background-image:url(http://csscheckbox.com/checkboxes/dark-check-green.png);
+}
+
+/*specific classes related to Checkbox skins*/
+
+.lite-green-check{background-image:url(http://csscheckbox.com/checkboxes/lite-green-check.png);}
+.lite-blue-check{background-image:url(http://csscheckbox.com/checkboxes/lite-blue-check.png);}
+.lite-gray-check{background-image:url(http://csscheckbox.com/checkboxes/lite-gray-check.png);}
+.lite-cyan-check{background-image:url(http://csscheckbox.com/checkboxes/lite-cyan-check.png);}
+.lite-orange-check{background-image:url(http://csscheckbox.com/checkboxes/lite-orange-check.png);}
+.lite-red-check{background-image:url(http://csscheckbox.com/checkboxes/lite-red-check.png);}
