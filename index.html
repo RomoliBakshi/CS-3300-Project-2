@@ -128,7 +128,7 @@
                     
                     	var color = d3.scale.linear()
                     	    .domain([0, n - 1])
-                    	    .range(["#3366FF", "#00FFFF"]);
+                    	    .range(["#fddf81", "#D63926"]);
                     
                     	var xAxis = d3.svg.axis()
                     	    .scale(x)
@@ -183,8 +183,8 @@
                     	    .attr("x", function(d) { return x(d.x); })
                     	    .attr("y", height)
                     	    .attr("width", x.rangeBand())
-                    	    .attr("height", 0)
-                    	    .style("opacity", 0.4);
+                    	    .attr("height", 0);
+                    	    //.style("opacity", );
                     
                     	rect.transition()
                     	    .delay(function(d, i) { return i * 10; })
@@ -226,8 +226,7 @@
                     	    .attr("cx", 530)
                     	    .attr("cy", 200)
                     	    .attr("r", 8)
-                    	    .style("fill", "#3366FF")
-                    	    .style("opacity", 0.4);
+                    	    .style("fill", "#fddf81");
                     	svg.append("text")
                     		.attr("x", 555)
                     		.attr("y", 205)
@@ -236,8 +235,7 @@
                     	    .attr("cx", 530)
                     	    .attr("cy", 175)
                     	    .attr("r", 8)
-                    	    .style("fill", "#1AB3FF")
-                    	    .style("opacity", 0.4);
+                    	    .style("fill", "#EA8C54");
                     	svg.append("text")
                     		.attr("x", 555)
                     		.attr("y", 180)
@@ -246,8 +244,7 @@
                     	    .attr("cx", 530)
                     	    .attr("cy", 150)
                     	    .attr("r", 8)
-                    	    .style("fill", "#00FFFF")
-                    	    .style("opacity", 0.4);
+                    	    .style("fill", "#D63926");
                     	svg.append("text")
                     		.attr("x", 555)
                     		.attr("y", 155)
@@ -298,8 +295,8 @@
             </div>
         </div>
         <footer>
-            <h2>Manuela Rios, Stephanie Cheuk, Romoli Bakshi</h2>
             <h2>INFO 3300: Project Two</h2>
+            <h2>Manuela Rios, Stephanie Cheuk, Romoli Bakshi</h2>
         </footer>
     </body>
 </html>
