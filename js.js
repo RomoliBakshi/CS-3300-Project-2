@@ -93,7 +93,8 @@ function changeGenre() {
 		.attr("x", width / 2)
 		.attr("y", padding / 2)
 		.style("text-anchor", "middle")
-		.text("Movie Book Adaptions: Rating Comparisons");
+		.text("Movie Book Adaptions: Rating Comparisons")
+		.style("font-size", 22);
 
 	// Clear Graph
 	function editGraph(selection, checked) {
@@ -280,7 +281,8 @@ function changeDate() {
 		.attr("x", width / 2)
 		.attr("y", padding / 2)
 		.style("text-anchor", "middle")
-		.text("Movie Book Adaptions: Rating Comparisons");
+		.text("Movie Book Adaptions: Rating Comparisons")
+		.style("font-size", 22);
 
 	function changeSelection(lower, upper) {
 		var data = d3.selectAll("#dated")

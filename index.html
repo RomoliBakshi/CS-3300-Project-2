@@ -1,325 +1,304 @@
 <html>
-<head>
-	<title>Books to Movies</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-	<script src="http://d3js.org/topojson.v1.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<script src="./jquery.nouislider.all.js"></script>
- 	<script src="js.js"></script> 
- 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700|Oswald:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" type="text/css" href="jquery.nouislider.css">
-	<style>
-		@font-face {
-			font-family: Helvetica;
-			font-weight: 400;
-			src: url("./fonts/HelveticaNeueLTStd-LtEx.otf") format("opentype");
-		}
-		.axis path {fill: none; stroke: #000000; }
-		.axis line {stroke: #000000; }
-		.axis text { font-size: x-small; }
-		body { font-family: "Helvetica"; } 
-		text {
-		  font: 16px Helvetica;
-		}
+    <head>
+        <title>From Page to Screen</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="http://d3js.org/topojson.v1.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="./jquery.nouislider.all.js"></script>
+        <script src="js.js"></script> 
+        <link href='http://fonts.googleapis.com/css?family=Arvo:400,700|Oswald:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="jquery.nouislider.css">
+    </head>
+    <body>
 
-		.axis path,
-		.axis line {
-		  fill: none;
-		  stroke: #000;
-		  shape-rendering: crispEdges;
-		}
+        <!--Top section of the page-->
+        <div id="title">
+            <div id="tabs">
+                <ul class="nav">
+                    <li class="nav"> <a class="nav genre_href selected" href="#genre"> Genre </a>  </li>
+                    <li class="nav"> <a class="nav date_href" href="#date"> Date </a> </li>
+                </ul>
+            </div>
+            <h1>FROM PAGE TO SCREEN</h1>
+        </div>
 
-		form {
-		  right: 10px;
-		  top: 10px;
-		}
+        <!--Stephanie's graph-->
+        <div id="content">
+            <div id="centered">
+                <div id="filter"></div>
+                <div id="svg"></div>
+            </div>
+            <div id="info">
+                <div id="info_content"></div>
+            </div>
+        </div>
 
-    </style>
-</head>
-<body>
-	<div id="title">
-		<div id="tabs"> 
-	        <ul class="nav"> 
-	          <li class="nav"> <a class="nav genre_href selected" href="#genre"> Genre </a>  </li>
-	          <li class="nav"> <a class="nav date_href" href="#date"> Date </a> </li>
-	        </ul>
-		</div>
-		<h1>FROM <strong>PAGE</strong> TO SCREEN</h1>
-	</div>
-
-<div id="content">
-	<div id="centered">
-		<div id="filter"></div>
-		<div id="svg"></div>
-	</div>		
-	<div id="info">
-		<div id="info_content"></div>
-	</div>
-</div>
-
-	<div id="barGraph">
-	<br>
-		<form>
-		  <label><input type="radio" name="mode" value="grouped"> Grouped</label>
-		  <label><input type="radio" name="mode" value="stacked" checked> Stacked</label>
-		</form>
-		<script>
-			var layers = new Array();
-			var imdbRatings = [], tomatoRatings = [], tomatoAudienceRatings = [];
-
-			d3.json("./text.json", function(error, data) { 
-				
-				//Filters data to be inputted to graph
-			  	filmsSeparatedByGenre = [], adventureArray = [], comedyArray = [], dramaArray = [], familyArray = [], fantasyArray = [], romanceArray = [], scifiArray = [], thrillerArray = [];
-
-			  	data.forEach(function(d){
-
-			  		if(d.mainGenre.indexOf("Adventure") != -1){
-			  			adventureArray.push(d);
-			  		}
-			  		if(d.mainGenre.indexOf("Comedy") != -1){
-			  			comedyArray.push(d);
-			  		}
-			  		if(d.mainGenre.indexOf("Drama") != -1){
-			  			dramaArray.push(d);
-			  		}
-			  		if(d.mainGenre.indexOf("Family") != -1){
-			  			familyArray.push(d);
-			  		}  
-			  		if(d.mainGenre.indexOf("Fantasy") != -1){
-			  			fantasyArray.push(d);
-			  		}  	
-			  		if(d.mainGenre.indexOf("Romance") != -1){
-			  			romanceArray.push(d);
-			  		} 	
-			  		if(d.mainGenre.indexOf("Sci-Fi") != -1){
-			  			scifiArray.push(d);
-			  		} 
-			  		if(d.mainGenre.indexOf("Thriller") != -1){
-			  			thrillerArray.push(d);
-			  		} 
-		  		});
-
-			  	filmsSeparatedByGenre.push(adventureArray, comedyArray, dramaArray, familyArray, fantasyArray, romanceArray, scifiArray, thrillerArray);
-		  		
-		  		filmsSeparatedByGenre.forEach(function(genre, i){
-		  			var imdbRatingSum = 0;
-		  			var tomatoRatingSum = 0;
-		  			var tomatoAudienceRatingSum = 0;
-		  			genre.forEach(function(film){
-		  				if(film.imdbRating.indexOf("N/A") == -1 && film.tomatoRating.indexOf("N/A") == -1 && film.tomatoAudienceRating.indexOf("N/A") 
-		  					== -1){
-		  					imdbRatingSum += Number(film.imdbRating);
-		  					tomatoRatingSum += Number(film.tomatoRating);
-		  					tomatoAudienceRatingSum += Number(film.tomatoAudienceRating)*2;
-		  				}
-		  			})
-		  			imdbRatings.push({x: i, y: imdbRatingSum/genre.length, y0: 0});
-		  			tomatoAudienceRatings.push({x: i, y: tomatoAudienceRatingSum/genre.length, y0:imdbRatingSum/genre.length});
-		  			tomatoRatings.push({x: i, y: tomatoRatingSum/genre.length, y0:imdbRatingSum/genre.length + tomatoAudienceRatingSum/genre.length});
-		  			
-		  		});
-				layers.push(imdbRatings); 			//IMDB
-				layers.push(tomatoAudienceRatings); //Rotten Tomatoes Viewer Ratings
-				layers.push(tomatoRatings);			//Rotten Tomatoes Critics Ratings
-
-				
-				//Begins graph drawing
-				var n = 3, // number of layers
-			    m = 8; // number of samples per layer
-
-				var stack = d3.layout.stack(),
-				    yGroupMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y; }); }),
-				    yStackMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); });
-
-				var margin = {top: 40, right: 250, bottom: 70, left: 150},
-				    width = 960 - margin.left - margin.right,
-				    height = 500 - margin.top - margin.bottom;
-
-				var x = d3.scale.ordinal()
-				    .domain(d3.range(m))
-				    .rangeRoundBands([0, width], .08);
-
-				var y = d3.scale.linear()
-				    .domain([0, yStackMax])
-				    .range([height, 0]);
-
-				var color = d3.scale.linear()
-				    .domain([0, n - 1])
-				    .range(["#3366FF", "#00FFFF"]);
-
-				var xAxis = d3.svg.axis()
-				    .scale(x)
-				    .tickPadding(6)
-				    .tickFormat(function(d){
-				    	if(d==0){
-				    		return "Adventure";
-				    	}
-				    	if(d==1){
-				    		return "Comedy";
-				    	}
-				    	if(d==2){
-				    		return "Drama";
-				    	}
-				    	if(d==3){
-				    		return "Family";
-				    	}
-				    	if(d==4){
-				    		return "Fantasy";
-				    	}
-				    	if(d==5){
-				    		return "Romance";
-				    	}
-				    	if(d==6){
-				    		return "Sci-Fi";
-				    	}
-				    	if(d==7){
-				    		return "Thriller";
-				    	}
-				    })
-				    .orient("bottom");
-
-				var yAxis = d3.svg.axis()
-				    .scale(y)
-				    .tickPadding(6);
-
-				var svg = d3.select("#barGraph").append("svg")
-				    .attr("width", width + margin.left + margin.right)
-				    .attr("height", height + margin.top + margin.bottom)
-				  .append("g")
-				    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-				var layer = svg.selectAll(".layer")
-				    .data(layers)
-				  .enter().append("g")
-				    .attr("class", "layer")
-				    .style("fill", function(d, i) { return color(i); });
-
-				var rect = layer.selectAll("rect")
-				    .data(function(d) { return d; })
-				  .enter().append("rect")
-				    .attr("x", function(d) { return x(d.x); })
-				    .attr("y", height)
-				    .attr("width", x.rangeBand())
-				    .attr("height", 0)
-				    .style("opacity", 0.4);
-
-				rect.transition()
-				    .delay(function(d, i) { return i * 10; })
-				    .attr("y", function(d) { return y(d.y0 + d.y); })
-				    .attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); });
-
-				svg.append("g")
-				    .attr("class", "x axis")
-				    .attr("transform", "translate(0," + height + ")")
-				    .call(xAxis);
-
-				svg.append("g")
-				    .attr("class", "y axis")
-				    .attr("transform", "rotate(90)")
-				    .call(yAxis);
-
-				//Creates labels & legend
-				var xLabel = svg.append("text")
-					.attr("x", width / 2)
-					.attr("y", height + (margin.bottom/2))
-					.style("text-anchor", "middle")
-					.text("Film/Book Genres");
-
-				var yLabel = svg.append("text")
-					.attr("x", 0)
-					.attr("y", height/2)
-					.attr("transform", "translate(-80, 0)")
-					.style("text-anchor", "middle")
-					.text("Relative Rating Value")
-
-				var title = svg.append("text")
-					.attr("x", width / 2)
-					.attr("y", 0)
-					.style("text-anchor", "middle")
-					.text("IMDB Ratings vs. Rotten Tomatoes Ratings By Genre");
-
-				svg.append("circle")
-				    .attr("cx", 625)
-				    .attr("cy", 200)
-				    .attr("r", 8)
-				    .style("fill", "#3366FF")
-				    .style("opacity", 0.4);
-				svg.append("text")
-					.attr("x", 650)
-					.attr("y", 205)
-					.text("Overall IMDB Rating")
-				svg.append("circle")
-				    .attr("cx", 625)
-				    .attr("cy", 175)
-				    .attr("r", 8)
-				    .style("fill", "#1AB3FF")
-				    .style("opacity", 0.4);
-				svg.append("text")
-					.attr("x", 650)
-					.attr("y", 180)
-					.text("Rotten Tomatoes Viewer Ratings")
-				svg.append("circle")
-				    .attr("cx", 625)
-				    .attr("cy", 150)
-				    .attr("r", 8)
-				    .style("fill", "#00FFFF")
-				    .style("opacity", 0.4);
-				svg.append("text")
-					.attr("x", 650)
-					.attr("y", 155)
-					.text("Rotten Tomatoes Critic Ratings")
-
-				//Creates transitions between Grouped & Stacked
-				d3.selectAll("input").on("change", change);
-
-				var timeout = setTimeout(function() {
-				  d3.select("input[value=\"grouped\"]").property("checked", true).each(change);
-				}, 2000);
-
-				function change() {
-				  clearTimeout(timeout);
-				  if (this.value === "grouped") transitionGrouped();
-				  else transitionStacked();
-				}
-
-				function transitionGrouped() {
-				  y.domain([0, yGroupMax]);
-
-				  rect.transition()
-				      .duration(500)
-				      .delay(function(d, i) { return i * 10; })
-				      .attr("x", function(d, i, j) { return x(d.x) + x.rangeBand() / n * j; })
-				      .attr("width", x.rangeBand() / n)
-				    .transition()
-				      .attr("y", function(d) { return y(d.y); })
-				      .attr("height", function(d) { return height - y(d.y); });
-				}
-
-				function transitionStacked() {
-				  y.domain([0, yStackMax]);
-
-				  rect.transition()
-				      .duration(500)
-				      .delay(function(d, i) { return i * 10; })
-				      .attr("y", function(d) { return y(d.y0 + d.y); })
-				      .attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); })
-				    .transition()
-				      .attr("x", function(d) { return x(d.x); })
-				      .attr("width", x.rangeBand());
-				}
-
-		  	});
-
-		</script>
-	</div>
-	<div>
-		<h2>Manuela Rios, Stephanie Cheuk, Romoli Bakshi</h2>
-	</div>
-
-</body>
+        <!--Romoli's graph-->
+        <div id="barGraph">
+            <br>
+            <form id="groupstack">
+                <label><input class="groupstack" type="radio" name="mode" value="grouped"> Grouped</label><br>
+                <label><input class="groupstack" type="radio" name="mode" value="stacked" checked> Stacked</label>
+            </form>
+            <div id="barInner">
+                <script>
+                    var layers = new Array();
+                    var imdbRatings = [], tomatoRatings = [], tomatoAudienceRatings = [];
+                    
+                    d3.json("./text.json", function(error, data) { 
+                    	
+                    	//Filters data to be inputted to graph
+                      	filmsSeparatedByGenre = [], adventureArray = [], comedyArray = [], dramaArray = [], familyArray = [], fantasyArray = [], romanceArray = [], scifiArray = [], thrillerArray = [];
+                    
+                      	data.forEach(function(d){
+                    
+                      		if(d.mainGenre.indexOf("Adventure") != -1){
+                      			adventureArray.push(d);
+                      		}
+                      		if(d.mainGenre.indexOf("Comedy") != -1){
+                      			comedyArray.push(d);
+                      		}
+                      		if(d.mainGenre.indexOf("Drama") != -1){
+                      			dramaArray.push(d);
+                      		}
+                      		if(d.mainGenre.indexOf("Family") != -1){
+                      			familyArray.push(d);
+                      		}  
+                      		if(d.mainGenre.indexOf("Fantasy") != -1){
+                      			fantasyArray.push(d);
+                      		}  	
+                      		if(d.mainGenre.indexOf("Romance") != -1){
+                      			romanceArray.push(d);
+                      		} 	
+                      		if(d.mainGenre.indexOf("Sci-Fi") != -1){
+                      			scifiArray.push(d);
+                      		} 
+                      		if(d.mainGenre.indexOf("Thriller") != -1){
+                      			thrillerArray.push(d);
+                      		} 
+                     		});
+                    
+                      	filmsSeparatedByGenre.push(adventureArray, comedyArray, dramaArray, familyArray, fantasyArray, romanceArray, scifiArray, thrillerArray);
+                     		
+                     		filmsSeparatedByGenre.forEach(function(genre, i){
+                     			var imdbRatingSum = 0;
+                     			var tomatoRatingSum = 0;
+                     			var tomatoAudienceRatingSum = 0;
+                     			genre.forEach(function(film){
+                     				if(film.imdbRating.indexOf("N/A") == -1 && film.tomatoRating.indexOf("N/A") == -1 && film.tomatoAudienceRating.indexOf("N/A") 
+                     					== -1){
+                     					imdbRatingSum += Number(film.imdbRating);
+                     					tomatoRatingSum += Number(film.tomatoRating);
+                     					tomatoAudienceRatingSum += Number(film.tomatoAudienceRating)*2;
+                     				}
+                     			})
+                     			imdbRatings.push({x: i, y: imdbRatingSum/genre.length, y0: 0});
+                     			tomatoAudienceRatings.push({x: i, y: tomatoAudienceRatingSum/genre.length, y0:imdbRatingSum/genre.length});
+                     			tomatoRatings.push({x: i, y: tomatoRatingSum/genre.length, y0:imdbRatingSum/genre.length + tomatoAudienceRatingSum/genre.length});
+                     			
+                     		});
+                    	layers.push(imdbRatings); 			//IMDB
+                    	layers.push(tomatoAudienceRatings); //Rotten Tomatoes Viewer Ratings
+                    	layers.push(tomatoRatings);			//Rotten Tomatoes Critics Ratings
+                    
+                    	
+                    	//Begins graph drawing
+                    	var n = 3, // number of layers
+                        m = 8; // number of samples per layer
+                    
+                    	var stack = d3.layout.stack(),
+                    	    yGroupMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y; }); }),
+                    	    yStackMax = d3.max(layers, function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); });
+                    
+                    	var margin = {top: 40, right: 280, bottom: 90, left: 180},
+                    	    width = 960 - margin.left - margin.right,
+                    	    height = 500 - margin.top - margin.bottom;
+                    
+                    	var x = d3.scale.ordinal()
+                    	    .domain(d3.range(m))
+                    	    .rangeRoundBands([0, width], .08);
+                    
+                    	var y = d3.scale.linear()
+                    	    .domain([0, yStackMax])
+                    	    .range([height, 0]);
+                    
+                    	var color = d3.scale.linear()
+                    	    .domain([0, n - 1])
+                    	    .range(["#3366FF", "#00FFFF"]);
+                    
+                    	var xAxis = d3.svg.axis()
+                    	    .scale(x)
+                    	    .tickPadding(6)
+                    	    .tickFormat(function(d){
+                    	    	if(d==0){
+                    	    		return "Adventure";
+                    	    	}
+                    	    	if(d==1){
+                    	    		return "Comedy";
+                    	    	}
+                    	    	if(d==2){
+                    	    		return "Drama";
+                    	    	}
+                    	    	if(d==3){
+                    	    		return "Family";
+                    	    	}
+                    	    	if(d==4){
+                    	    		return "Fantasy";
+                    	    	}
+                    	    	if(d==5){
+                    	    		return "Romance";
+                    	    	}
+                    	    	if(d==6){
+                    	    		return "Sci-Fi";
+                    	    	}
+                    	    	if(d==7){
+                    	    		return "Thriller";
+                    	    	}
+                    	    })
+                    	    .orient("bottom");
+                    
+                    	var yAxis = d3.svg.axis()
+                    	    .scale(y)
+                    	    .tickPadding(6);
+                    
+                    	var svg = d3.select("#barGraph").append("svg")
+                    	    .attr("width", width + margin.left + margin.right)
+                    	    .attr("height", height + margin.top + margin.bottom)
+                    	  .append("g")
+                    	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                    
+                    	var layer = svg.selectAll(".layer")
+                    	    .data(layers)
+                    	  .enter().append("g")
+                    	    .attr("class", "layer")
+                    	    .style("fill", function(d, i) { return color(i); });
+                    
+                    	var rect = layer.selectAll("rect")
+                    	    .data(function(d) { return d; })
+                    	  .enter().append("rect")
+                    	    .attr("x", function(d) { return x(d.x); })
+                    	    .attr("y", height)
+                    	    .attr("width", x.rangeBand())
+                    	    .attr("height", 0)
+                    	    .style("opacity", 0.4);
+                    
+                    	rect.transition()
+                    	    .delay(function(d, i) { return i * 10; })
+                    	    .attr("y", function(d) { return y(d.y0 + d.y); })
+                    	    .attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); });
+                    
+                    	svg.append("g")
+                    	    .attr("class", "x axis")
+                    	    .attr("transform", "translate(0," + height + ")")
+                    	    .call(xAxis);
+                    
+                    	svg.append("g")
+                    	    .attr("class", "y axis")
+                    	    .attr("transform", "rotate(90)")
+                    	    .call(yAxis);
+                    
+                    	//Creates labels & legend
+                    	var xLabel = svg.append("text")
+                    		.attr("x", width / 2)
+                    		.attr("y", height + (margin.bottom/2))
+                    		.style("text-anchor", "middle")
+                    		.text("Film/Book Genres");
+                    
+                    	var yLabel = svg.append("text")
+                    		.attr("x", 0)
+                    		.attr("y", height/2)
+                    		.attr("transform", "translate(-100, 0)")
+                    		.style("text-anchor", "middle")
+                    		.text("Relative Rating Value")
+                    
+                    	var title = svg.append("text")
+                    		.attr("x", width/2)
+                    		.attr("y", -20)
+                    		.style("text-anchor", "middle")
+                    		.text("IMDB Ratings vs. Rotten Tomatoes Ratings By Genre")
+                            .style("font-size", 22);
+                    
+                    	svg.append("circle")
+                    	    .attr("cx", 530)
+                    	    .attr("cy", 200)
+                    	    .attr("r", 8)
+                    	    .style("fill", "#3366FF")
+                    	    .style("opacity", 0.4);
+                    	svg.append("text")
+                    		.attr("x", 555)
+                    		.attr("y", 205)
+                    		.text("Overall IMDB Rating")
+                    	svg.append("circle")
+                    	    .attr("cx", 530)
+                    	    .attr("cy", 175)
+                    	    .attr("r", 8)
+                    	    .style("fill", "#1AB3FF")
+                    	    .style("opacity", 0.4);
+                    	svg.append("text")
+                    		.attr("x", 555)
+                    		.attr("y", 180)
+                    		.text("Rotten Tomatoes Viewer Ratings")
+                    	svg.append("circle")
+                    	    .attr("cx", 530)
+                    	    .attr("cy", 150)
+                    	    .attr("r", 8)
+                    	    .style("fill", "#00FFFF")
+                    	    .style("opacity", 0.4);
+                    	svg.append("text")
+                    		.attr("x", 555)
+                    		.attr("y", 155)
+                    		.text("Rotten Tomatoes Critic Ratings")
+                    
+                    	//Creates transitions between Grouped & Stacked
+                    	d3.selectAll("input").on("change", change);
+                    
+                    	var timeout = setTimeout(function() {
+                    	  d3.select("input[value=\"grouped\"]").property("checked", true).each(change);
+                    	}, 2000);
+                    
+                    	function change() {
+                    	  clearTimeout(timeout);
+                    	  if (this.value === "grouped") transitionGrouped();
+                    	  else transitionStacked();
+                    	}
+                    
+                    	function transitionGrouped() {
+                    	  y.domain([0, yGroupMax]);
+                    
+                    	  rect.transition()
+                    	      .duration(500)
+                    	      .delay(function(d, i) { return i * 10; })
+                    	      .attr("x", function(d, i, j) { return x(d.x) + x.rangeBand() / n * j; })
+                    	      .attr("width", x.rangeBand() / n)
+                    	    .transition()
+                    	      .attr("y", function(d) { return y(d.y); })
+                    	      .attr("height", function(d) { return height - y(d.y); });
+                    	}
+                    
+                    	function transitionStacked() {
+                    	  y.domain([0, yStackMax]);
+                    
+                    	  rect.transition()
+                    	      .duration(500)
+                    	      .delay(function(d, i) { return i * 10; })
+                    	      .attr("y", function(d) { return y(d.y0 + d.y); })
+                    	      .attr("height", function(d) { return y(d.y0) - y(d.y0 + d.y); })
+                    	    .transition()
+                    	      .attr("x", function(d) { return x(d.x); })
+                    	      .attr("width", x.rangeBand());
+                    	}
+                    
+                     	});
+                    
+                </script>
+            </div>
+        </div>
+        <footer>
+            <h2>Manuela Rios, Stephanie Cheuk, Romoli Bakshi</h2>
+        </footer>
+    </body>
 </html>
